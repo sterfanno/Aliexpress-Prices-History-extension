@@ -1,0 +1,14 @@
+{
+   "localization": {
+      "message": "en"
+   },
+   "app_name": {
+      "message": "Aliexpress™ prices history"
+   },
+   "app_short_name": {
+      "message": "Ali Price history"
+   },
+   "app_description": {
+      "message": "Showing graphics price changes on Aliexpress.com"
+   }
+}

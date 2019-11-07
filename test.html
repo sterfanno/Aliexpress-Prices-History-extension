@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>__MSG_app_name__</title>
+   <!-- <script src="/js/libs/storage.js"></script>
+   <script src="/js/libs/localization.js"></script> -->
+
+   <script src="/js/content.js"></script>
+
+   <script src="/js/libs/moment.min.js"></script>
+   <script src="/js/libs/chart.min.js"></script>
+</head>
+<body>
+hello!
+      <div class="chart-container" style="position: relative; height:60vh; width:95vw">
+            <canvas id="chart" width="400" height="100">Your browser does not support the canvas element.</canvas>
+         </div>
+
+
+         <script>
+            jsonData = [{ "id": "32922325097", "date": "2018-11-01", "min": "1.44", "max": "1.44", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-03", "min": "1.19", "max": "1.19", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-08", "min": "1.42", "max": "1.42", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-11", "min": "1.29", "max": "1.29", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-12", "min": "1.41", "max": "1.41", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-14", "min": "1.31", "max": "1.31", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-15", "min": "1.42", "max": "1.42", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-17", "min": "1.23", "max": "1.23", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-20", "min": "1.52", "max": "1.52", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-21", "min": "1.52", "max": "1.52", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-23", "min": "1.18", "max": "1.18", "curr": "USD" }, { "id": "32922325097", "date": "2018-11-24", "min": "1.18", "max": "1.18", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-06", "min": "1.37", "max": "1.37", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-07", "min": "1.52", "max": "1.52", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-09", "min": "2.88", "max": "2.88", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-10", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-12", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-14", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-16", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-17", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-20", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-21", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-22", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-25", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-26", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-28", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-29", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2018-12-31", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-01", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-04", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-05", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-09", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-12", "min": "2.59", "max": "2.59", "curr": "USD" }, { "id": "32922325097", "date": "2019-01-14", "min": "1.35", "max": "1.35", "curr": "USD" }, { "id": "32922325097", "date": "2019-03-10", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-03-26", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-04-18", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-07-07", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-08-31", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-09-15", "min": "2.55", "max": "2.55", "curr": "USD" }, { "id": "32922325097", "date": "2019-09-26", "min": "2.55", "max": "2.55", "curr": "USD" }]
+
+            let dates = [];
+            let prices = [];
+            let curr = jsonData[0].curr;
+
+            // filter correct
+            const filtered = jsonData
+               .filter(key => {
+                  if (key.hasOwnProperty('date') && key.hasOwnProperty('min')) {
+                     if (prices[prices.length - 1] != key.min) { // unique price
+                        dates.push(key.date);
+                        prices.push(key.min);
+                        return true;
+                     }
+                  }
+               });
+         </script>
+         <script>
+            // fix https://github.com/moment/moment/issues/1407
+            moment.createFromInputFallback = function (config) {
+               // unreliable string magic, or
+               config._d = new Date(config._i);
+            };
+
+            let ctx = document.getElementById('chart').getContext('2d');
+            let chart = new Chart(ctx, {
+               type: 'line',
+               data: {
+                  labels: dates.map(d => new Date(d).toString()),
+                  datasets: [{
+                     label: 'Prices',
+                     data: prices,
+                     fill: false,
+                     borderColor: 'rgba(255, 99, 132, 1)',
+                     borderWidth: 3,
+                     lineTension: 0
+                  }]
+               },
+               options: {
+                  title: {
+                     text: 'Prices history'
+                  },
+                  scales: {
+                     xAxes: [{
+                        type: 'time',
+                        time: {
+                           // round: 'day'
+                           tooltipFormat: 'll'
+                        },
+                        scaleLabel: {
+                           labelString: 'Date'
+                        }
+                     }],
+                     yAxes: [{
+                        scaleLabel: {
+                           display: true,
+                           labelString: 'value'
+                        }
+                     }]
+                  },
+               }
+            });
+         </script>
+
+</body>
+</html>
